@@ -476,18 +476,17 @@ body {
   cursor: pointer;
 }
 
-.badge-best-seller {
-  background: var(--gradient-primary);
-  color: var(--color-white);
-  padding: 4px 8px;
-  border-top-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  font-size: var(--fs-xxs);
-  font-weight: var(--fw-bold);
-  position: absolute;
-  top: 0;
-  left: 38px;
-  transform: translateY(-50%);
+.badge-best-seller { 
+  background: linear-gradient(180deg, #032E15 0%, #016630 100%); 
+  color: var(--color-white); 
+  padding: 4px 8px; 
+  border-top-left-radius: 8px; 
+  border-bottom-right-radius: 8px; 
+  font-size: 10px; 
+  font-weight: var(--fw-bold); 
+  position: absolute; top: 0; 
+  left: 38px; 
+  transform: translateY(-50%); 
 }
 
 /* Included Boxes */
