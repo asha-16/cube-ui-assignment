@@ -269,6 +269,10 @@
     text-align: center;
   }
 
+  .footer-links-social {
+    gap: 80px;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
   }
