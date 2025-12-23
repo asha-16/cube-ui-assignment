@@ -1,0 +1,279 @@
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
+  .nav-links,
+  .desktop-only {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background: var(--gradient-secondary);
+    padding: 24px;
+    /* border-radius: 12px; */
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .mobile-menu.active {
+    display: flex;
+  }
+
+  .mobile-menu a {
+    color: white;
+    text-decoration: none;
+  }
+
+  /* ======== STATS =========== */
+  .stats-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  /* ======== COMPARISION TABLE=========== */
+  .comparison {
+    padding: 80px 24px;
+  }
+
+  .comparison-container {
+    gap: 32px;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 12px;
+  }
+
+  .column-header img {
+    width: 70px;
+    height: auto;
+  }
+
+  .comparison-table thead th span {
+    font-size: var(--fs-xs);
+  }
+
+  .comparison-table thead th.highlight span {
+    font-size: var(--fs-base);
+  }
+
+
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  .hero {
+    background: 
+      url("../assets/images/hero-bg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    min-height: 100vh;
+  }
+
+  .hero-container {
+    margin: 0;
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-content {
+    align-items: center;
+    text-align: center;
+     transform: translateY(-100px);
+  }
+
+  .hero-title {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+
+  .hero-stats {
+    gap: 24px;
+  }
+
+  .stat {
+    align-items: center;
+  }
+
+  .stat-value {
+    font-size: 48px;
+  }
+
+  .stat-label {
+    font-size: var(--fs-base);
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    color: var(--color-primary);
+  }
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: #06381f;
+    padding: 20px;
+  }
+
+  .mobile-menu.active {
+    display: flex;
+  }
+
+  .mobile-menu a {
+    color: white;
+    padding: 12px 0;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  
+  /* ======== PRODUCT PAGE =========== */
+  .product-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .fragrance-options {
+    width: 100%;
+  }
+
+  .gallery-thumbnails {
+    display: none;
+  }
+
+  /* ======== COLLECTIONS PAGE =========== */
+  .collection-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin: 40px auto;
+  }
+
+  .accordion-header {
+    padding: 18px 20px;
+  }
+
+  .accordion-header span {
+    font-size: var(--fs-base);
+    font-weight: var(--fw-semibold);
+  }
+
+  .accordion-content {
+    padding: 0 20px 20px 20px;
+  }
+
+  .accordion-content p {
+    font-size: var(--fs-sm);
+  }
+
+  .collection-image {
+    justify-content: center;
+  }
+
+  .collection-image img {
+    height: 240px;
+  }
+
+  
+  /* ======== STATS =========== */
+  .stats {
+    padding: 40px 0;
+  }
+
+  .stats-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 35px;
+  }
+
+  .stat-item h3 {
+    font-size: var(--fs-3xl);
+  }
+
+
+  .stat-item p {
+    font-size: var(--fs-sm);
+  }
+
+  /* ======== COMPARISION TABLE=========== */
+   /* Section spacing */
+  .comparison {
+    padding: 60px 16px;
+  }
+
+  /* Enable horizontal scrolling */
+  .comparison-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Prevent table from shrinking */
+  .comparison-table {
+    min-width: 720px;
+    border-collapse: collapse;
+  }
+
+  .comparison-table tbody td {
+    padding: 12px;
+    font-size: var(--fs-sm);
+  }
+
+  /* Sticky first column (row titles only) */
+  .comparison-table th:first-child,
+  .comparison-table td:first-child {
+    position: sticky;
+    left: 0;
+    background: #ffffff;
+    z-index: 2;
+    text-align: left;
+    width: 160px;
+    min-width: 160px;
+    max-width: 160px;
+  }
+
+  /* Slightly reduce padding for mobile */
+  .comparison-table th,
+  .comparison-table td {
+    padding: 10px;
+    font-size: var(--fs-sm);
+  }
+
+  /* Scale down brand images */
+  .comparison-table thead img {
+    width: 56px;
+    height: auto;
+  }
+
+  /* Icons inside body */
+  .comparison-table tbody img {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* ======== FOOTER =========== */
+  .footer-logo {
+    text-align: center;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    
+  }
+
+}
