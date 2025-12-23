@@ -165,6 +165,15 @@
     display: none;
   }
 
+  .badge-best-seller { 
+    padding: 3px 6px; 
+    font-size: 8px; 
+    position: absolute;
+    top: 0; 
+    left: 45px; 
+    transform: translateY(-50%); 
+  }
+
   /* Collections */
   .collection-container {
     grid-template-columns: 1fr;
