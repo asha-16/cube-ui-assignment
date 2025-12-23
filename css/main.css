@@ -16,10 +16,9 @@ body {
 }
 
 
-/* ========================
-  REUSABLE COMPONENTS
- ======================== */
-
+/* =========================
+     REUSABLE COMPONENTS
+========================= */
 .btn-primary {
   padding: 12px 28px;
   border-radius: 50px;
@@ -30,17 +29,21 @@ body {
   background: var(--gradient-primary);
 }
 
-/* ===================== 
-  NAVBAR
- ===================== */
+.btn-primary:hover {
+  background-color: var(--color-primary-dark); /* darker shade of primary */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
 
+/* =========================
+     NAVBAR
+========================= */
 .header {
   position: absolute;
   top: 0;
   width: 100%;
   z-index: 20;
 }
-
 
 .nav-container {
   max-width: 1400px;
@@ -69,7 +72,7 @@ body {
 .nav-links a {
   text-decoration: none;
   font-size: var(--fs-base);
-  color: var(--color-nav-links);
+  color: var(--color-nav-link);
 }
 
 .has-dropdown {
@@ -81,7 +84,6 @@ body {
 .nav-actions {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 16px;
 }
 
@@ -97,11 +99,9 @@ body {
   display: none;
 }
 
-
-/* ===============================
-  HERO PAGE
- =============================== */
-
+/* =========================
+     HERO SECTION
+========================= */
 .hero {
   min-height: 100vh;
   background: url("../assets/images/hero-bg.png") center / cover no-repeat;
@@ -115,7 +115,6 @@ body {
   margin-left: 90px;
   margin-bottom: 80px;
 }
-
 
 .hero-content {
   max-width: 692px;
@@ -144,8 +143,8 @@ body {
   font-size: var(--fs-5xl);
   font-weight: var(--fw-bold);
   line-height: 112%;
-  letter-spacing: -1.33px;
-  color: var(--color-primary-text);
+  letter-spacing: var(--ls-tight);
+  color: var(--color-primary);
 }
 
 .hero-stats {
@@ -156,12 +155,11 @@ body {
 .stat {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
 }
 
 .stat-value {
-  font-size: 72px;
+  font-size: var(--fs-6xl);
   font-weight: var(--fw-bold);
   background: var(--gradient-secondary);
   -webkit-background-clip: text;
@@ -174,7 +172,6 @@ body {
   color: #0D542B;
 }
 
-/* Hero Button */
 .hero-btn {
   width: fit-content;
   padding: 12px 45px;
@@ -182,10 +179,11 @@ body {
 }
 
 
-/* ============================
-   PRODUCT PAGE
-============================= */
+/* =========================
+     PRODUCT PAGE
+========================= */
 
+/* Container */
 .product-container {
   max-width: 1400px;
   margin: 100px auto;
@@ -199,7 +197,9 @@ body {
   margin: 0;
 }
 
-/* LEFT GALLERY */
+/* -------------------------
+   LEFT: Product Gallery
+-------------------------- */
 .product-gallery {
   display: flex;
   flex-direction: column;
@@ -207,7 +207,7 @@ body {
 }
 
 .gallery-main {
-  position: relative;   
+  position: relative;
   border-radius: 16px;
   display: flex;
   align-items: center;
@@ -221,8 +221,7 @@ body {
   object-fit: contain;
 }
 
-
-/* arrows */
+/* Gallery Arrows */
 .gallery-arrow {
   position: absolute;
   top: 95%;
@@ -240,7 +239,7 @@ body {
   right: 20px;
 }
 
-/* dots */
+/* Gallery Dots */
 .gallery-dots {
   position: absolute;
   bottom: 20px;
@@ -261,7 +260,7 @@ body {
 
 .gallery-thumbnails img {
   width: 100%;
-  aspect-ratio: 1 / 1;   /* ensures equal height & width */
+  aspect-ratio: 1/1;
   object-fit: cover;
   border-radius: 8px;
   cursor: pointer;
@@ -271,10 +270,11 @@ body {
   outline: 2px solid var(--color-primary);
 }
 
+/* -------------------------
+   RIGHT: Product Details
+-------------------------- */
 
-
-/* RIGHT DETAILS */
-
+/* Product Info */
 .product-info {
   display: flex;
   flex-direction: column;
@@ -292,7 +292,7 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
-  color: #666;
+  color: var(--color-text-table);
 }
 
 .product-rating span {
@@ -305,7 +305,28 @@ body {
   font-size: var(--fs-base);
   font-weight: var(--fw-light);
   color: var(--color-primary);
-  line-height: 1.5;
+  line-height: var(--lh-relaxed);
+}
+
+/* -------------------------
+   Subscription Cards
+-------------------------- */
+.subscription-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.subscription-card {
+  position: relative;
+  border: 1px solid #B8B8B8;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.subscription-card.active {
+  border: 1px solid #919798;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
 .badge-popular {
@@ -314,8 +335,8 @@ body {
   left: 0;
   transform: translateY(-50%);
   width: 100%;
-  background: linear-gradient(270deg, #032E15 0%, #008236 51.92%, #00C950 100%);
-  color: #fff;
+  background: var(--gradient-primary);
+  color: var(--color-white);
   font-size: var(--fs-lg);
   font-weight: var(--fw-bold);
   text-align: center;
@@ -324,32 +345,27 @@ body {
   border-top-right-radius: 8px;
 }
 
-
-.fragrance-options {
-  display: flex;
-  gap: 16px;
-}
-
+/* Subscription Header */
 .subscription-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.subscription-card.active .subscription-header {
-  border-bottom: 1.01px solid #919798;
+  border-bottom: 1px solid transparent;
   padding-bottom: 10px;
 }
 
-
-.subscription-header input[type="radio"] {
-  accent-color: #032E15;
-  cursor: pointer;
+.subscription-card.active .subscription-header {
+  border-color: #919798;
 }
 
-.subscription-choice{
+.subscription-choice {
   display: flex;
   gap: 12px;
+}
+
+.subscription-header input[type="radio"] {
+  accent-color: var(--color-primary);
+  cursor: pointer;
 }
 
 .price {
@@ -373,6 +389,23 @@ body {
   text-decoration: line-through;
 }
 
+.subscription-header h3 {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-light);
+  color: var(--color-primary);
+}
+
+/* -------------------------
+   Subscription Content
+-------------------------- */
+.subscription-content {
+  display: none;
+}
+
+.subscription-card.active .subscription-content {
+  display: block;
+}
+
 .subscription-block {
   display: flex;
   flex-direction: column;
@@ -387,48 +420,12 @@ body {
   margin-bottom: 12px;
 }
 
-.subscription-options {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.add-to-cart-btn {
-  width: 100%;
-  margin-top: 32px;
-  padding: 14px;
-  border-radius: 50px;
-  background: linear-gradient(180deg, #032E15 0%, #016630 100%);
-  color: white;
-  font-weight: 600;
-  text-align: center;
-  text-decoration: none;
-  display: block;
-}
-
-.subscription-card {
-  position: relative;
-  border: 1.01px solid #B8B8B8;
-  border-radius: 8px;
-  padding: 15px;
-}
-
-.subscription-card.active {
-  border: 1.01px solid #919798;
-  border: Mixed solid 
-}
-
-.subscription-header h3 {
-  font-size: 20px;
-  font-weight: var(--fw-light);
-  color: var(--color-primary);
-}
-
+/* Fragrance Options */
 .fragrance-options {
   display: flex;
-  gap: 8px;
+  gap: 16px;
   width: 400px;
-  position: relative;
+   position: relative;
 }
 
 .fragrance-card {
@@ -441,75 +438,51 @@ body {
   align-items: center;
   gap: 6px;
   position: relative;
+  border: 1px solid #e5e5e5;
+  transition: all 0.2s ease;
 }
 
 .fragrance-card input[type="radio"] {
   position: absolute;
   top: 10px;
   left: 10px;
-  accent-color: #032E15;
+  accent-color: var(--color-primary);
   cursor: pointer;
 }
 
 .fragrance-card-label {
-  color: #919798;
   font-size: var(--fs-xs);
   font-weight: var(--fw-light);
+  color: #919798;
+  text-align: center;
 }
 
-.fragrance-card input:checked + .fragrance-card-label {
+.fragrance-card input:checked ~ .fragrance-card-label {
   font-weight: var(--fw-bold);
   color: var(--color-primary);
 }
 
-/* =========================
-   Fragrance Selection States
-========================= */
-
-.fragrance-card {
-  border: 1px solid #e5e5e5;
-  transition: all 0.2s ease;
-}
-
-/* When selected */
-.fragrance-card input:checked ~ .fragrance-card-label,
 .fragrance-card input:checked ~ img {
   opacity: 1;
 }
 
-.fragrance-card input:checked ~ .fragrance-card-label {
-  color: var(--color-primary);
-  font-weight: var(--fw-bold);
-}
-
-/* Card highlight */
-.fragrance-card input:checked {
-  accent-color: #032E15;
-}
-
 .fragrance-card:has(input:checked) {
-  border: 1.5px solid #032E15;
-  background: #F0FDF4;
+  border: 1.5px solid var(--color-primary);
+  background: var(--color-table-column-bg);
 }
 
-/* Hover feedback */
 .fragrance-card:hover {
-  border-color: #032E15;
+  border-color: var(--color-primary);
   cursor: pointer;
 }
 
-.subscription-card.active {
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-}
-
-
 .badge-best-seller {
-  background: linear-gradient(180deg, #032E15 0%, #016630 100%);
+  background: var(--gradient-primary);
   color: var(--color-white);
   padding: 4px 8px;
   border-top-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  font-size: 10px;
+  font-size: var(--fs-xxs);
   font-weight: var(--fw-bold);
   position: absolute;
   top: 0;
@@ -517,6 +490,7 @@ body {
   transform: translateY(-50%);
 }
 
+/* Included Boxes */
 .included-boxes {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -526,16 +500,16 @@ body {
 
 .included-card {
   flex: 1;
-  border: 1.01px solid #919798;
+  border: 1px solid #919798;
   border-radius: 12px;
   padding: 16px;
   text-align: center;
 }
 
 .included-card-label {
-  color: #6F7577;
   font-size: var(--fs-base);
   font-weight: var(--fw-light);
+  color: #6F7577;
 }
 
 .free {
@@ -549,40 +523,31 @@ body {
   justify-content: space-around;
   align-items: center;
   margin-top: 30px;
-
 }
 
-.subscription-block p {
-  font-size: var(--fs-base);
-  color: var(--color-primary);
-  font-weight: var(--fw-light);
-}
-
+/* Included List */
 .included-list {
   padding-left: 16px;
-  color: #666;
   list-style: none;
-  display:flex ;
+  display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
 .included-list li {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   gap: 6px;
 }
 
 .included-list li img {
-  height: 14px;
   width: 14px;
+  height: 14px;
 }
 
 .included-list li span {
   font-size: var(--fs-sm);
   font-weight: var(--fw-light);
-  letter-spacing: 0.9px;
   color: var(--color-primary);
 }
 
@@ -590,19 +555,24 @@ body {
   font-weight: var(--fw-bold);
 }
 
-/* Hide subscription content by default */
-.subscription-content {
-  display: none;
-}
-
-.subscription-card.active .subscription-content {
+/* Add to Cart Button */
+.add-to-cart-btn {
+  width: 100%;
+  margin-top: 32px;
+  padding: 14px;
+  border-radius: 50px;
+  background: var(--gradient-primary);
+  color: var(--color-white);
+  font-weight: var(--fw-semibold);
+  text-align: center;
+  text-decoration: none;
   display: block;
 }
 
 
 
 /* =========================
-OUR COLLECTIONS
+   COLLECTION SECTION
 ============================ */
 
 .collection-container {
@@ -615,16 +585,17 @@ OUR COLLECTIONS
   padding: 0 32px;
 }
 
-.collection-title {
-  font-size: var(--fs-3xl);
-  font-weight: var(--fw-semibold);
-  color: var(--color-primary);
-}
-
+/* Left Accordion List */
 .accordion-list {
   display: flex;
   flex-direction: column;
   gap: 30px;
+}
+
+.collection-title {
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-semibold);
+  color: var(--color-primary);
 }
 
 .accordion-items {
@@ -637,6 +608,10 @@ OUR COLLECTIONS
   border: 1px solid #CDCDCD;
   border-radius: 8px;
   overflow: hidden;
+}
+
+.accordion-item.active .accordion-content {
+  display: block;
 }
 
 .accordion-header {
@@ -670,10 +645,7 @@ OUR COLLECTIONS
   font-weight: var(--fw-light);
 }
 
-.accordion-item.active .accordion-content {
-  display: block;
-}
-
+/* Right Collection Image */
 .collection-image {
   display: flex;
   justify-content: flex-end;
@@ -681,14 +653,12 @@ OUR COLLECTIONS
 
 .collection-image img {
   width: 100%;
-  max-width: 100%;        
-  height: auto;
-  aspect-ratio: 4 / 5;   
+  max-width: 100%;
+  height: 700px;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   border-radius: 30px;
 }
-
-
 
 /* =========================
    STATS SECTION
@@ -703,7 +673,6 @@ OUR COLLECTIONS
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 32px;
-
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 86px;
@@ -762,8 +731,8 @@ OUR COLLECTIONS
   text-align: center;
   font-size: var(--fs-xxs);
   font-weight: var(--fw-light);
-  color: #666666;
-  border-bottom: 1.01px solid #666666;
+  color: var(--color-text-table);
+  border-bottom: 1.01px solid var(--color-text-table);
 }
 
 /* Column title (Qualities) */
@@ -771,7 +740,7 @@ OUR COLLECTIONS
   text-align: left;
   font-size: var(--fs-base);
   font-weight: var(--fw-bold);
-  color: #322D2D;
+  color: var(--color-table-header);
 }
 
 /* Header images */
@@ -784,8 +753,8 @@ OUR COLLECTIONS
 
 /* Highlighted header */
 .comparison-table thead th.highlight {
-  background-color: #F0FDF4;
-  border-bottom: 1.01px dotted #666666;
+  background-color: var(--color-table-column-bg);
+  border-bottom: 1.01px dotted var(--color-text-table);
   border-radius: 12px 12px 0 0;
 }
 
@@ -793,16 +762,15 @@ OUR COLLECTIONS
 .comparison-table thead th span {
   font-size: var(--fs-xxs);
   font-weight: var(--fw-light);
-  color: #666666;
+  color: var(--color-text-table);
 }
 
 /* Active (highlighted) column title */
 .comparison-table thead th.highlight span {
   font-size: var(--fs-lg);
   font-weight: var(--fw-light);
-  color: #000000;
+  color: var(--color-black);
 }
-
 
 /* =========================
    TABLE BODY
@@ -813,8 +781,8 @@ OUR COLLECTIONS
   text-align: center;
   font-size: var(--fs-base);
   font-weight: var(--fw-light);
-  color: #666666;
-  border-bottom: 1.01px solid #666666;
+  color: var(--color-text-table);
+  border-bottom: 1.01px solid var(--color-text-table);
 }
 
 /* Row titles (first column) */
@@ -825,8 +793,8 @@ OUR COLLECTIONS
 
 /* Highlighted column */
 .comparison-table tbody td.highlight {
-  background-color: #F0FDF4;
-  border-bottom: 1.01px dotted #666666;
+  background-color: var(--color-table-column-bg);
+  border-bottom: 1.01px dotted var(--color-text-table);
 }
 
 /* Icons */
@@ -835,23 +803,26 @@ OUR COLLECTIONS
   height: 20px;
 }
 
-/* CTA */
+/* CTA button */
 .comparision-cta {
   align-self: center;
   padding: 14px 28px;
   width: fit-content;
+  text-decoration: none;
+  color: var(--color-white);
+  background: var(--gradient-primary);
+  border-radius: 50px;
 }
 
+/* Column pointer effect */
 .comparison-table thead th[data-col] {
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
-
-
-
 /* =========================
    FOOTER
 ============================ */
+
 .site-footer {
   background: var(--color-primary);
   padding: 45px 32px;
@@ -863,7 +834,6 @@ OUR COLLECTIONS
   margin: 0 auto;
 }
 
-/* Logo */
 .footer-logo {
   font-size: var(--fs-4xl);
   font-weight: var(--fw-bold);
@@ -871,7 +841,6 @@ OUR COLLECTIONS
   margin-bottom: 30px;
 }
 
-/* GRID: Left + Right */
 .footer-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -879,11 +848,11 @@ OUR COLLECTIONS
   align-items: start;
 }
 
+/* LEFT SECTION */
 .footer-links-social {
   display: flex;
   gap: 100px;
 }
-
 
 .footer-links ul {
   list-style: none;
@@ -903,7 +872,7 @@ OUR COLLECTIONS
   color: var(--color-white);
 }
 
-.footer-social{
+.footer-social {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -919,6 +888,7 @@ OUR COLLECTIONS
   text-decoration: none;
 }
 
+/* RIGHT SECTION */
 .footer-right {
   display: flex;
   flex-direction: column;
@@ -964,9 +934,21 @@ OUR COLLECTIONS
   font-size: var(--fs-xxs);
   color: var(--color-white);
   line-height: 1.5;
-  width: 100%;
 }
 
-.footer-privacy a{
+.footer-privacy a {
   color: var(--color-white);
+}
+
+
+/* ==== pages appear on scroll ====== */
+.fade-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

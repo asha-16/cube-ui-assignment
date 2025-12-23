@@ -17,22 +17,24 @@
 </head>
 <body>
 
-  <!-- HEADER / NAVBAR -->
-  <header class="header">
+<!-- =========================
+     HEADER / NAVBAR
+========================= -->
+<header class="header">
   <div class="nav-container">
 
     <a href="#home" class="logo">GTG</a>
 
     <nav class="nav-links">
-      <a href="#">Home</a>
-      <a href="#" class="has-dropdown">
+      <a href="#home">Home</a>
+      <a href="#product" class="has-dropdown">
         <span>Shop</span>
         <img src="assets/icons/arrow-down.png" alt="arrow down">
       </a>
-      <a href="#">Fragrances</a>
-      <a href="#">About Us</a>
-      <a href="#">Blog</a>
-      <a href="#">Contact</a>
+      <a href="#product">Fragrances</a>
+      <a href="#stats-container">About Us</a>
+      <a href="#comparison">Blog</a>
+      <a href="#footer">Contact</a>
     </nav>
 
     <div class="nav-actions">
@@ -40,101 +42,100 @@
         <img src="assets/icons/search-icon.png" alt="Search">
       </span>
 
+      <!-- Hamburger Menu for Mobile -->
       <button class="hamburger" aria-label="Open menu">
         ☰
       </button>
 
-      <a href="#" class="btn-primary desktop-only">Shop Now</a>
+      <a href="#product" class="btn-primary desktop-only">Shop Now</a>
     </div>
-
   </div>
 
-  
+  <!-- Mobile Menu -->
   <div class="mobile-menu">
-    <a href="#">Home</a>
-    <a href="#">Shop</a>
-    <a href="#">Fragrances</a>
-    <a href="#">About Us</a>
-    <a href="#">Blog</a>
-    <a href="#">Contact</a>
+    <a href="#home">Home</a>
+    <a href="#product">Shop</a>
+    <a href="#product">Fragrances</a>
+    <a href="#stats-container">About Us</a>
+    <a href="#comparison">Blog</a>
+    <a href="#footer">Contact</a>
   </div>
-
 </header>
 
+<!-- =========================
+     HERO SECTION
+========================= -->
+<section id="home" class="hero fade-on-scroll">
+  <div class="hero-container">
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-container">
+    <div class="hero-content">
 
-      <!-- LEFT CONTENT -->
-      <div class="hero-content">
-
-        <div class="hero-badge">
-            <img src="assets\icons\badge-medal.png" alt="badge-medal">
-            Awarded the best perfume in the world
-        </div>
-
-        <h1 class="hero-title"> Live your best life.</h1>
-
-        <div class="hero-stats">
-          <div class="stat">
-            <div class="stat-value">10x</div>
-            <div class="stat-label">power</div>
-          </div>
-
-          <div class="stat">
-            <div class="stat-value">9</div>
-            <div class="stat-label">ingredients</div>
-          </div>
-
-          <div class="stat">
-            <div class="stat-value">20K+</div>
-            <div class="stat-label">happy customers</div>
-          </div>
-        </div>
-
-        <a href="#" class="btn-primary hero-btn">Shop Now</a>
-
+      <div class="hero-badge">
+        <img src="assets/icons/badge-medal.png" alt="badge-medal" >
+        Awarded the best perfume in the world
       </div>
 
+      <h1 class="hero-title">Live your best life.</h1>
+
+      <!-- Hero Stats -->
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-value">10x</div>
+          <div class="stat-label">power</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">9</div>
+          <div class="stat-label">ingredients</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">20K+</div>
+          <div class="stat-label">happy customers</div>
+        </div>
+      </div>
+
+      <a href="#" class="btn-primary hero-btn">Shop Now</a>
+
     </div>
-  </section>
+  </div>
+</section>
+
 
 
  
-   <!-- PRODUCT SECTION -->
-<section class="product">
+ <!-- =========================
+     PRODUCT SECTION
+========================= -->
+<section class="product fade-on-scroll" id="product">
   <div class="product-container">
 
-    <!-- LEFT: PRODUCT GALLERY -->
-     <div class="product-gallery">
+    <!-- LEFT: Product Gallery -->
+    <div class="product-gallery">
 
-        <!-- Main Product Image -->
-        <div class="gallery-main">
-          <img id="mainImage" src="assets/images/product-main.png" alt="GTG Perfume Bottle">
+      <!-- Main Image -->
+      <div class="gallery-main">
+        <img id="mainImage" src="assets/images/product-main.png" alt="GTG Perfume Bottle">
 
-          <!-- Slider Controls -->
-          <div class="gallery-controls">
-            <button class="gallery-arrow left" aria-label="Previous image">
-              <img src="assets/icons/left-slider.png" alt="Previous">
-            </button>
+        <!-- Slider Controls -->
+        <div class="gallery-controls">
+          <button class="gallery-arrow left" aria-label="Previous image">
+            <img src="assets/icons/left-slider.png" alt="Previous">
+          </button>
 
-            <div class="gallery-dots">
-              <img src="assets/icons/dot-filled.png" data-index="0">
-              <img src="assets/icons/dot-outline.png" data-index="1">
-              <img src="assets/icons/dot-outline.png" data-index="2">
-              <img src="assets/icons/dot-outline.png" data-index="3">
-            </div>
-
-
-            <button class="gallery-arrow right" aria-label="Next image">
-              <img src="assets/icons/right-slider.png" alt="Next">
-            </button>
+          <div class="gallery-dots">
+            <img src="assets/icons/dot-filled.png" data-index="0">
+            <img src="assets/icons/dot-outline.png" data-index="1">
+            <img src="assets/icons/dot-outline.png" data-index="2">
+            <img src="assets/icons/dot-outline.png" data-index="3">
           </div>
-        </div>
 
-        <!-- Thumbnail Images -->
-        <div class="gallery-thumbnails">
+          <button class="gallery-arrow right" aria-label="Next image">
+            <img src="assets/icons/right-slider.png" alt="Next">
+          </button>
+        </div>
+      </div>
+
+      <!-- Thumbnail Images -->
+      <div class="gallery-thumbnails">
         <img src="assets/images/thumb-1.png" data-index="0">
         <img src="assets/images/thumb-2.png" data-index="1">
         <img src="assets/images/thumb-3.png" data-index="2">
@@ -148,38 +149,30 @@
 
     </div>
 
-
-    
-
-    <!-- RIGHT: PRODUCT DETAILS -->
+    <!-- RIGHT: Product Details -->
     <div class="product-details">
 
       <!-- Product Info -->
       <div class="product-info">
         <h2 class="product-title">GTG Perfumes</h2>
-
         <div class="product-rating">
           <img src="assets/icons/star-rating.png" alt="4.7 star rating">
           <span>4.7 (999+ reviews)</span>
         </div>
-
         <p class="product-description">
           Experience the timeless allure backed by modern artistry, captured in every bottle of our fragrance. Crafted for those who seek to elevate their essence with purpose and sophistication.
         </p>
       </div>
 
       <!-- Subscription Options -->
-
       <div class="subscription-options">
 
-        <!-- SINGLE SUBSCRIPTION -->
+        <!-- Single Subscription -->
         <div class="subscription-card active">
-
           <span class="badge-popular">Most Popular</span>
-
           <div class="subscription-header">
             <div class="subscription-choice">
-              <input type="radio" name="subscription" checked>
+              <input type="radio" name="subscription" value="Single Subscription" checked>
               <h3>Single Subscription</h3>
             </div>
             <div class="price">
@@ -188,86 +181,63 @@
             </div>
           </div>
 
-          <!-- CHOOSE FRAGRANCE -->
-           <div class="subscription-content">
-          <div class="subscription-block">
-            <p class="block-title">Choose a fragrance</p>
-
-            <div class="fragrance-options">
-              <label class="fragrance-card">
-                <input type="radio" name="single-fragrance" checked>
-                <span class="badge-best-seller">BEST-SELLER</span>
-                <span class="fragrance-card-label">Original</span>
-                <img src="assets/images/original.png" alt="Original">
-              </label>
-
-              <label class="fragrance-card">
-                <input type="radio" name="single-fragrance">
-                <span class="fragrance-card-label">Lily</span>
-                <img src="assets/images/lily.png" alt="Lily">
-              </label>
-
-              <label class="fragrance-card">
-                <input type="radio" name="single-fragrance">
-                 <span class="fragrance-card-label">Rose</span>
-                <img src="assets/images/rose.png" alt="Rose">
-              </label>
-            </div>
-          </div>
-
-          <!-- WHAT'S INCLUDED -->
-          <div class="subscription-block">
-            <p class="block-title">What’s included</p>
-
-            <div class="included-boxes">
-              <div class="included-card">
-                <p class="included-card-label">Every 30 days</p>
-                <img src="assets/images/every-30-days.png" alt="">
+          <!-- Choose Fragrance -->
+          <div class="subscription-content">
+            <div class="subscription-block">
+              <p class="block-title">Choose a fragrance</p>
+              <div class="fragrance-options">
+                <label class="fragrance-card">
+                  <input type="radio" name="single-fragrance" value="Original" checked>
+                  <span class="badge-best-seller">BEST-SELLER</span>
+                  <span class="fragrance-card-label">Original</span>
+                  <img src="assets/images/original.png" alt="Original">
+                </label>
+                <label class="fragrance-card">
+                  <input type="radio" name="single-fragrance" value="Lily">
+                  <span class="fragrance-card-label">Lily</span>
+                  <img src="assets/images/lily.png" alt="Lily">
+                </label>
+                <label class="fragrance-card">
+                  <input type="radio" name="single-fragrance" value="Rose">
+                  <span class="fragrance-card-label">Rose</span>
+                  <img src="assets/images/rose.png" alt="Rose">
+                </label>
               </div>
+            </div>
 
-              <div class="included-card">
-                <p class="included-card-label">One Time <strong class="free">(Free)</strong></p>
-                <div class="included-card-images">
-                   <img src="assets/images/one-time-free-1.png" alt="">
-                  <img src="assets/images/one-time-free-2.png" alt="">
-                  <img src="assets/images/one-time-free-3.png" alt="">
+            <!-- What's Included -->
+            <div class="subscription-block">
+              <p class="block-title">What’s included</p>
+              <div class="included-boxes">
+                <div class="included-card">
+                  <p class="included-card-label">Every 30 days</p>
+                  <img src="assets/images/every-30-days.png" alt="">
+                </div>
+                <div class="included-card">
+                  <p class="included-card-label">One Time <strong class="free">(Free)</strong></p>
+                  <div class="included-card-images">
+                    <img src="assets/images/one-time-free-1.png" alt="">
+                    <img src="assets/images/one-time-free-2.png" alt="">
+                    <img src="assets/images/one-time-free-3.png" alt="">
+                  </div>
                 </div>
               </div>
+              <ul class="included-list">
+                <li><img src="assets/icons/SealCheck.png" alt="check-box"> <span>1 bottle shipped monthly</span></li>
+                <li><img src="assets/icons/SealCheck.png" alt="check-box"> <span><strong>Free</strong> Sampler for original, lily and rose fragrances</span></li>
+                <li><img src="assets/icons/SealCheck.png" alt="check-box"> <span><strong>50% OFF Shipping</strong></span></li>
+                <li><img src="assets/icons/SealCheck.png" alt="check-box"> <span>Pause or Cancel Anytime after 3 months minimum</span></li>
+                <li><img src="assets/icons/SealCheck.png" alt="check-box"> <span>28 Day Money Back Guarantee*</span></li>
+              </ul>
             </div>
-
-            <ul class="included-list">
-              <li>
-                <img src="assets\icons\SealCheck.png" alt="check-box"> 
-                <span>1 bottle shipped monthly</span>
-              </li>
-              <li>
-                <img src="assets\icons\SealCheck.png" alt="check-box"> 
-                <span><strong>Free</strong> Sampler for original, lily and rose fragrances</span>
-              </li>
-              <li>
-                <img src="assets\icons\SealCheck.png" alt="check-box"> 
-                <span><strong>50% OFF Shipping</strong> </span>
-              </li>
-              <li>
-                <img src="assets\icons\SealCheck.png" alt="check-box"> 
-                <span>Pause or Cancel Anytime after 3 months minimum</span>
-              </li>
-              <li>
-                <img src="assets\icons\SealCheck.png" alt="check-box"> 
-                <span>28 Day Money Back Guarantee*</span>
-              </li>
-            </ul>
           </div>
         </div>
 
-        </div>
-
-        <!-- DOUBLE SUBSCRIPTION -->
+        <!-- Double Subscription -->
         <div class="subscription-card">
-
           <div class="subscription-header">
             <div class="subscription-choice">
-              <input type="radio" name="subscription">
+              <input type="radio" name="subscription" value="Double Subscription">
               <h3>Double Subscription</h3>
             </div>
             <div class="price">
@@ -276,120 +246,93 @@
             </div>
           </div>
 
-            <!-- CHOOSE FRAGRANCE 1-->
-             <div class="subscription-content">
+          <div class="subscription-content">
+            <!-- Fragrance 1 -->
             <div class="subscription-block">
-              <p class="block-title">Choose  Fragrance 1</p>
-
+              <p class="block-title">Choose Fragrance 1</p>
               <div class="fragrance-options">
                 <label class="fragrance-card">
-                  <input type="radio" name="double-fragrance-1" checked>
+                  <input type="radio" name="double-fragrance-1" value="Original" checked>
                   <span class="badge-best-seller">BEST-SELLER</span>
                   <span class="fragrance-card-label">Original</span>
                   <img src="assets/images/original.png" alt="Original">
                 </label>
-
                 <label class="fragrance-card">
-                  <input type="radio" name="double-fragrance-1">
+                  <input type="radio" name="double-fragrance-1" value="Lily">
                   <span class="fragrance-card-label">Lily</span>
                   <img src="assets/images/lily.png" alt="Lily">
                 </label>
-
                 <label class="fragrance-card">
-                 <input type="radio" name="double-fragrance-1">
+                  <input type="radio" name="double-fragrance-1" value="Rose">
                   <span class="fragrance-card-label">Rose</span>
                   <img src="assets/images/rose.png" alt="Rose">
                 </label>
               </div>
             </div>
 
-            <!-- CHOOSE FRAGRANCE 2-->
+            <!-- Fragrance 2 -->
             <div class="subscription-block">
-              <p class="block-title">Choose  Fragrance 1</p>
-
+              <p class="block-title">Choose Fragrance 2</p>
               <div class="fragrance-options">
                 <label class="fragrance-card">
-                  <input type="radio" name="double-fragrance-2">
+                  <input type="radio" name="double-fragrance-2" value="Original">
                   <span class="badge-best-seller">BEST-SELLER</span>
                   <span class="fragrance-card-label">Original</span>
                   <img src="assets/images/original.png" alt="Original">
                 </label>
-
                 <label class="fragrance-card">
-                  <input type="radio" name="double-fragrance-2">
+                  <input type="radio" name="double-fragrance-2" value="Lily">
                   <span class="fragrance-card-label">Lily</span>
                   <img src="assets/images/lily.png" alt="Lily">
                 </label>
-
                 <label class="fragrance-card">
-                  <input type="radio" name="double-fragrance-2">
+                  <input type="radio" name="double-fragrance-2" value="Rose">
                   <span class="fragrance-card-label">Rose</span>
                   <img src="assets/images/rose.png" alt="Rose">
                 </label>
               </div>
             </div>
 
-            <!-- WHAT'S INCLUDED -->
-          <div class="subscription-block">
-            <p class="block-title">What’s included</p>
-
-            <div class="included-boxes">
-              <div class="included-card">
-                <p class="included-card-label">Every 30 days</p>
-                <img src="assets/images/every-30-days.png" alt="">
-              </div>
-
-              <div class="included-card">
-                <p class="included-card-label">One Time <strong class="free">(Free)</strong></p>
-                <div class="included-card-images">
-                   <img src="assets/images/one-time-free-1.png" alt="">
-                  <img src="assets/images/one-time-free-2.png" alt="">
-                  <img src="assets/images/one-time-free-3.png" alt="">
+            <!-- What's Included -->
+            <div class="subscription-block">
+              <p class="block-title">What’s included</p>
+              <div class="included-boxes">
+                <div class="included-card">
+                  <p class="included-card-label">Every 30 days</p>
+                  <img src="assets/images/every-30-days.png" alt="">
+                </div>
+                <div class="included-card">
+                  <p class="included-card-label">One Time <strong class="free">(Free)</strong></p>
+                  <div class="included-card-images">
+                    <img src="assets/images/one-time-free-1.png" alt="">
+                    <img src="assets/images/one-time-free-2.png" alt="">
+                    <img src="assets/images/one-time-free-3.png" alt="">
+                  </div>
                 </div>
               </div>
+              <ul class="included-list">
+                <li><img src="assets/icons/SealCheck.png" alt="check-box"> <span>1 bottle shipped monthly</span></li>
+                <li><img src="assets/icons/SealCheck.png" alt="check-box"> <span><strong>Free</strong> Sampler for original, lily and rose fragrances</span></li>
+                <li><img src="assets/icons/SealCheck.png" alt="check-box"> <span><strong>50% OFF Shipping</strong></span></li>
+                <li><img src="assets/icons/SealCheck.png" alt="check-box"> <span>Pause or Cancel Anytime after 3 months minimum</span></li>
+                <li><img src="assets/icons/SealCheck.png" alt="check-box"> <span>28 Day Money Back Guarantee*</span></li>
+              </ul>
             </div>
-
-            <ul class="included-list">
-              <li>
-                <img src="assets\icons\SealCheck.png" alt="check-box"> 
-                <span>1 bottle shipped monthly</span>
-              </li>
-              <li>
-                <img src="assets\icons\SealCheck.png" alt="check-box"> 
-                <span><strong>Free</strong> Sampler for original, lily and rose fragrances</span>
-              </li>
-              <li>
-                <img src="assets\icons\SealCheck.png" alt="check-box"> 
-                <span><strong>50% OFF Shipping</strong> </span>
-              </li>
-              <li>
-                <img src="assets\icons\SealCheck.png" alt="check-box"> 
-                <span>Pause or Cancel Anytime after 3 months minimum</span>
-              </li>
-              <li>
-                <img src="assets\icons\SealCheck.png" alt="check-box"> 
-                <span>28 Day Money Back Guarantee*</span>
-              </li>
-            </ul>
-          </div>
           </div>
         </div>
 
       </div>
 
-      
-
-      <!-- Add to Cart -->
+      <!-- Add to Cart Button -->
       <a href="#" class="add-to-cart-btn">Add to Cart</a>
 
     </div>
-
   </div>
 </section>
 
 
 <!-- Our collections -->
-<section class="collection">
+<section class="collection fade-on-scroll">
   <div class="collection-container">
 
     <!-- LEFT: Accordion List -->
@@ -449,35 +392,34 @@
 
 
 <!-- STATS SECTION -->
-<section class="stats">
-  <div class="stats-container">
+<section class="stats fade-on-scroll">
+  <div class="stats-container" id="stats-container">
 
     <div class="stat-item">
-      <h3>84%</h3>
+      <h3 data-target="84">0%</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
     </div>
 
     <div class="stat-item">
-      <h3>78%</h3>
+      <h3 data-target="78">0%</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
     </div>
 
     <div class="stat-item">
-      <h3>89%</h3>
+      <h3 data-target="89">0%</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
     </div>
 
     <div class="stat-item">
-      <h3>90%</h3>
+      <h3 data-target="90">0%</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
     </div>
-
   </div>
 </section>
 
 
 <!-- Why GTG is the #1 Choice  -->
-<section class="comparison">
+<section class="comparison fade-on-scroll" id="comparison">
   <div class="comparison-container">
 
     <h2 class="dashes">---</h2>
@@ -580,16 +522,14 @@
   </div>
 </section>
 
-<!-- FOOTER  -->
+
 <!-- FOOTER -->
-<footer class="site-footer">
+<footer class="site-footer fade-on-scroll" id="footer">
 
   <div class="footer-inner">
 
-    <!-- LOGO (OUTSIDE GRID) -->
     <h2 class="footer-logo">GTG</h2>
 
-    <!-- GRID: LEFT + RIGHT -->
     <div class="footer-grid">
 
       <!-- LEFT SECTION -->

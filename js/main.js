@@ -1,3 +1,8 @@
+
+// =============================
+// NAV BAR
+// =============================
+
 const hamburger = document.querySelector(".hamburger");
 const mobileMenu = document.querySelector(".mobile-menu");
 
@@ -8,25 +13,27 @@ hamburger.addEventListener("click", () => {
 
 
 
+// =============================
+// PRODUCT PAGE 
+// =============================
 
-// PRODUCT PAGE
-const subscriptionRadios = document.querySelectorAll(
-  'input[name="subscription"]'
-);
-
+const subscriptionRadios = document.querySelectorAll('input[name="subscription"]');
 const subscriptionCards = document.querySelectorAll('.subscription-card');
 
 subscriptionRadios.forEach((radio) => {
   radio.addEventListener('change', () => {
+    // Remove active class from all cards
     subscriptionCards.forEach(card => card.classList.remove('active'));
 
+    // Add active to selected card
     const selectedCard = radio.closest('.subscription-card');
     selectedCard.classList.add('active');
   });
 });
 
-
-//Image switching
+// -----------------------------
+// Gallery: Image Switching
+// -----------------------------
 const mainImage = document.querySelector('.gallery-main img');
 const thumbnails = document.querySelectorAll('.gallery-thumbnails img');
 const dots = document.querySelectorAll('.gallery-dots img');
@@ -42,45 +49,84 @@ const images = [
 
 let currentIndex = 0;
 
+// Function to update gallery images and active states
 function updateGallery(index, activeThumb) {
   currentIndex = index;
   mainImage.src = images[index];
 
+  // Update thumbnails
   thumbnails.forEach(thumb => thumb.classList.remove('active'));
   if (activeThumb) activeThumb.classList.add('active');
 
+  // Update dots
   dots.forEach((dot, i) => {
-    dot.src =
-      i === index
-        ? 'assets/icons/dot-filled.png'
-        : 'assets/icons/dot-outline.png';
+    dot.src = i === index ? 'assets/icons/dot-filled.png' : 'assets/icons/dot-outline.png';
   });
 }
 
+// Click on thumbnail
 thumbnails.forEach(thumb => {
   thumb.addEventListener('click', () => {
     updateGallery(Number(thumb.dataset.index), thumb);
   });
 });
 
+// Click on dots
 dots.forEach(dot => {
   dot.addEventListener('click', () => {
     updateGallery(Number(dot.dataset.index));
   });
 });
 
-
-//left and right slider logic
 // Arrow navigation
 nextBtn.addEventListener('click', () => {
   updateGallery((currentIndex + 1) % images.length);
 });
 
 prevBtn.addEventListener('click', () => {
-  updateGallery(
-    (currentIndex - 1 + images.length) % images.length
-  );
+  updateGallery((currentIndex - 1 + images.length) % images.length);
 });
+
+// -----------------------------
+// Add to Cart Button
+// -----------------------------
+const addToCartBtn = document.querySelector(".add-to-cart-btn");
+
+addToCartBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  // Get selected subscription
+  const plan = document.querySelector('input[name="subscription"]:checked')?.value;
+
+  // Determine price
+  const price = plan === "Double Subscription" ? "169.99" : "99.99";
+
+  // Get selected fragrances
+  let fragrance1 = "";
+  let fragrance2 = "";
+
+  if (plan === "Single Subscription") {
+    fragrance1 = document.querySelector('input[name="single-fragrance"]:checked')?.value;
+  }
+
+  if (plan === "Double Subscription") {
+    fragrance1 = document.querySelector('input[name="double-fragrance-1"]:checked')?.value;
+    fragrance2 = document.querySelector('input[name="double-fragrance-2"]:checked')?.value;
+  }
+
+  // Build URL params
+  const params = new URLSearchParams({
+    plan,
+    fragrance1,
+    fragrance2,
+    price
+  });
+
+  // Redirect to invoice page
+  window.location.href = `invoice.html?${params.toString()}`;
+});
+
+
 
 
 
@@ -117,6 +163,47 @@ accordionItems.forEach(item => {
 });
 
 
+//STATS
+const counters = document.querySelectorAll(".stat-item h3");
+
+const countUp = (counter) => {
+  const target = +counter.dataset.target;
+  let current = 0;
+  const increment = target / 60; // controls speed
+
+  const updateCounter = () => {
+    current += increment;
+    if (current < target) {
+      counter.textContent = `${Math.ceil(current)}%`;
+      requestAnimationFrame(updateCounter);
+    } else {
+      counter.textContent = `${target}%`;
+    }
+  };
+
+  updateCounter();
+};
+
+const statsSection = document.querySelector(".stats");
+
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        counters.forEach(counter => countUp(counter));
+        observer.unobserve(statsSection); // run only once
+      }
+    });
+  },
+  {
+    threshold: 0.4
+  }
+);
+
+observer.observe(statsSection);
+
+
+
 
 //COMPARISION TABLE
 const table = document.querySelector(".comparison-table");
@@ -141,3 +228,28 @@ const table = document.querySelector(".comparison-table");
       });
     });
   });
+
+
+
+//pages appear on scroll ---> triggering fade-on-scroll
+  document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll('.fade-on-scroll');
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1
+    }
+  );
+
+  sections.forEach(section => observer.observe(section));
+});
