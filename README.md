@@ -7,8 +7,6 @@ A modern, interactive frontend for a perfume brand showcasing products, collecti
 - HTML5
 - CSS3 (Flexbox & Grid)
 - JavaScript (ES6)
-- Responsive design techniques
-- Intersection Observer API for scroll animations
 
 ## Live Demo
 
